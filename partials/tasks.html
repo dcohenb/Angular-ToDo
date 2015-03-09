@@ -2,7 +2,7 @@
     <div class="one-half column">
         <h4>Tasks to comeplte</h4>
         <ul class="task-list todo">
-            <li ng-repeat="task in tasks | filter:{completed:false}">
+            <li ng-repeat="task in tasks | filter:{completed:false} | orderBy:'due_date'">
                 <input ng-model="task.completed" type="checkbox"/>
                 <div class="description">{{task.description}}</div>
                 <i class="fa fa-clock-o" title="{{task.due_date | dueDate}}" ng-class="{due:dateDue(task.due_date)}"></i>
@@ -14,7 +14,7 @@
     <div class="one-half column">
         <h4>Completed tasks</h4>
         <ul class="task-list completed">
-            <li ng-repeat="task in tasks | filter:{completed:true}">
+            <li ng-repeat="task in tasks | filter:{completed:true} | orderBy:'due_date':true">
                 <input ng-model="task.completed" type="checkbox"/>
                 <div class="description">{{task.description}}</div>
                 <i class="fa fa-clock-o" title="{{task.due_date | dueDate}}"></i>
