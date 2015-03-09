@@ -1,0 +1,56 @@
+/* Copy of the skeleton input styling, it doesn't support input[datetime-local] */
+input[type=datetime-local] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+  input[type=datetime-local]::-webkit-clear-button {
+    display: none; }
+
+/* Design of the tasks lists */
+.task-list li {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  transition: all 0.3s;
+  border-radius: 4px;
+  /* Style all font-awesome icons the same */ }
+  .task-list li > * {
+    margin: 0; }
+  .task-list li > input {
+    margin-right: 10px; }
+  .task-list li .description {
+    flex: 1; }
+    .task-list li .description i.due_date {
+      opacity: 0.5; }
+  .task-list li .fa {
+    display: block;
+    font-size: 1.5em;
+    margin-left: 10px; }
+  .task-list li a {
+    color: black;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.2s; }
+  .task-list li:hover {
+    background: #f7f7f7; }
+    .task-list li:hover a {
+      opacity: 0.4; }
+      .task-list li:hover a:hover {
+        opacity: 1; }
+.task-list.todo {
+  /* Paint the clock red if the task is already due */ }
+  .task-list.todo .fa-clock-o {
+    opacity: 0.8;
+    color: darkgreen; }
+    .task-list.todo .fa-clock-o.due {
+      color: darkred; }
+    .task-list.todo .fa-clock-o:hover {
+      opacity: 1; }
+.task-list.completed li > div {
+  text-decoration: line-through; }
+.task-list.completed .fa-clock-o {
+  opacity: 0.4; }

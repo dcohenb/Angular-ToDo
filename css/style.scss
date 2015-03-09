@@ -1,0 +1,89 @@
+/* Copy of the skeleton input styling, it doesn't support input[datetime-local] */
+input[type=datetime-local] {
+	height: 38px;
+	padding: 6px 10px;
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
+
+	&::-webkit-clear-button {
+		display: none; // Hide the date clear button
+	}
+}
+
+/* Design of the tasks lists */
+.task-list {
+	li {
+		display: flex;
+		align-items: center;
+		padding: 5px 10px;
+		transition: all 0.3s;
+		border-radius: 4px;
+
+		> * {
+			margin: 0;
+		}
+
+		> input {
+			margin-right: 10px;
+		}
+
+		.description {
+			flex: 1;
+			i.due_date {
+				opacity: 0.5;
+
+			}
+		}
+
+		/* Style all font-awesome icons the same */
+		.fa {
+			display: block;
+			font-size: 1.5em;
+			margin-left: 10px;
+		}
+
+		a {
+			color: black;
+			opacity: 0;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+
+		&:hover {
+			background: #f7f7f7;
+			a {
+				opacity: 0.4;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.todo {
+		/* Paint the clock red if the task is already due */
+		.fa-clock-o {
+			opacity: 0.8;
+			color: darkgreen;
+			&.due {
+				color: darkred;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.completed {
+		li > div {
+			text-decoration: line-through;
+		}
+
+		.fa-clock-o {
+			opacity: 0.4;
+		}
+	}
+}

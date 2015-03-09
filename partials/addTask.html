@@ -1,0 +1,25 @@
+<form ng-submit="submitHandler()">
+    <h4><a ui-sref="tasks"><i class="fa fa-chevron-circle-left"></i></a> Add Task</h4>
+
+    <div class="row">
+        <div class="one-half column">
+            <label for="assignee">Assignee</label>
+            <select class="u-full-width" ng-options="p as p for p in assignees" ng-model="task.assignee"
+                    id="assignee"></select>
+        </div>
+        <div class="one-half column">
+            <label for="due_date">Due Date
+                <small>(<span am-time-ago="task.due_date"></span>)</small>
+            </label>
+            <input class="u-full-width" type="datetime-local" ng-model="task.due_date" id="due_date" required/>
+        </div>
+    </div>
+
+    <div class="row">
+        <label for="description">Description</label>
+        <textarea class="u-full-width" placeholder="What to do…" ng-model="task.description"
+                  id="description"></textarea>
+    </div>
+
+    <input class="button-primary" type="submit" value="Create task">
+</form>
